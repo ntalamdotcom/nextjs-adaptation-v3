@@ -9,7 +9,7 @@ import SocialIcons from "../components/SocialIcons";
 import EducationItem from "../components/experienceEducation/EducationItem";
 import WorkExperienceItem from "../components/experienceEducation/WorkExperienceItem";
 
-export default function Home() {
+export default function ExperienceEducation() {
 
   useEffect(() => {
     document.body.className = "dark-vertion black-bg";
@@ -18,8 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <HeadPortfolio></HeadPortfolio>
-
+      <HeadPortfolio selectedPageName={"experience-education"} />
       <section className="mh-experince image-bg featured-img-one" id="mh-experience">
         <div className="img-color-overlay">
           <div className="container">

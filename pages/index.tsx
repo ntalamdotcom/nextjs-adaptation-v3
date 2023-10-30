@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <HeadPortfolio></HeadPortfolio>
+      <HeadPortfolio selectedPageName={"home"} />
       <section className="mh-home image-bg home-2-img" id="mh-home">
         <div className="img-foverlay img-color-overlay">
           <div className="container">

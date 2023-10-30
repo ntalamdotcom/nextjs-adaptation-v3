@@ -1,13 +1,13 @@
 // import { Head } from "next/document";
 
-import Head from "next/head";
-import Link from "next/link";
+// import Head from "next/head";
+// import Link from "next/link";
 import { useEffect } from "react";
 import HeadPortfolio from "../components/HeadPortfolio";
 import ScriptsPortfolio from "../components/ScriptsPortfolio";
-import SocialIcons from "../components/SocialIcons";
+// import SocialIcons from "../components/SocialIcons";
 
-export default function Home() {
+export default function About() {
 
   useEffect(() => {
     document.body.className = "dark-vertion black-bg";
@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <HeadPortfolio></HeadPortfolio>
+      <HeadPortfolio selectedPageName={"about"} />
       <section className="mh-about" id="mh-about">
         <div className="container">
           <div className="row section-separator">
@@ -30,8 +30,12 @@ export default function Home() {
                 <h2 className="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
                 <p className="wow fadeInUp" data-wow-duration="0.8s"
                   data-wow-delay="0.2s">Hello, I’m a Nallib,
-                  web-developer based on Australia.
-                  I have rich experience in multiple industries and technologies.</p>
+                  a Chilean I.T. developer currently based on Australia. I have rich experience in multiple industries and technologies and happy to acquire new skills.</p>
+                <p className="wow fadeInUp" data-wow-duration="0.8s"
+                  data-wow-delay="0.2s">
+                  The following are the technologies I have experience with.
+                </p>
+
                 <div className="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                   <ul>
                     <li><img alt="PHP logo" src="assets/images/php-64.png " /></li>
@@ -47,6 +51,10 @@ export default function Home() {
                       src="assets/images/google-cloud-64.png " /></li>
                     <li><img alt="AWS logo"
                       src="assets/images/amazon-aws-64.png " /></li>
+                    <li><img alt="Primefaces logo"
+                      src="assets/images/primefaces-64.png " /></li>
+                    <li><img alt="NodeJS logo"
+                      src="assets/images/nodejs-64.png " /></li>
 
                   </ul>
                 </div>

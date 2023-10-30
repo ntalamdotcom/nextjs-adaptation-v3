@@ -24,7 +24,7 @@ export default function Skills() {
 
   return (
     <>
-      <HeadPortfolio></HeadPortfolio>
+      <HeadPortfolio selectedPageName={"skills"} />
       <section className="mh-skills" id="mh-skills">
         <div className="home-v-img">
           <div className="container">

@@ -7,7 +7,7 @@ import HeadPortfolio from "../components/HeadPortfolio";
 import ScriptsPortfolio from "../components/ScriptsPortfolio";
 import SocialIcons from "../components/SocialIcons";
 
-export default function Home() {
+export default function Portfolio() {
 
   useEffect(() => {
     document.body.className = "dark-vertion black-bg";
@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <HeadPortfolio></HeadPortfolio>
+      <HeadPortfolio selectedPageName={"portfolio"} />
       <section className="mh-home image-bg home-2-img" id="mh-home">
         <div className="img-foverlay img-color-overlay">
           <div className="container">

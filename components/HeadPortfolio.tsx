@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HeadPortfolio({
-
+    selectedPageName
 }) {
 
     const [loadAnimations, setLoadAnimations] = useState<boolean>(false)
@@ -14,10 +14,60 @@ export default function HeadPortfolio({
             setLoadAnimations(true)
         }
     }, []);
-
+    const navBar = [
+        {
+            "link": "/",
+            "name": "home",
+            "title": "home",
+        },
+        {
+            "link": "/about",
+            "name": "about",
+            "title": "about",
+        },
+        {
+            "link": "/experience-education",
+            "title": "Experience & Education",
+            "name": "experience-education",
+        },
+        {
+            "link": "/portfolio",
+            "name": "portfolio",
+            "title": "Portfolio"
+        },
+        {
+            "link": "/skills",
+            "name": "skills",
+            "title": "Skills",
+        },
+        {
+            "link": "/blog",
+            "name": "blog",
+            "title": "Blog",
+        },
+        {
+            "link": "/contact",
+            "name": "contact",
+            "title": "Contact",
+        },
+    ]
+    const menuList = []
+    navBar.forEach(ele => {
+        var classDesc = "nav-item"
+        if (selectedPageName && ele.name === selectedPageName) {
+            classDesc += " active"
+        }
+        menuList.push(
+            <li className={classDesc}>
+                <Link
+                    href={ele.link}
+                    className="nav-link"
+                >{ele.name}</Link>
+            </li >
+        )
+    });
     return <>
         <Head>
-
             <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
             {/* <!-- Font Awesome --> */}
             <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css" />
@@ -115,57 +165,8 @@ export default function HeadPortfolio({
 
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto ml-auto">
-                                    <li className="nav-item active">
-                                        <Link
-                                            // target="_new" 
-                                            href="/"
-                                            className="nav-link"
-                                        >Home</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            // target="_new" 
-                                            href="/about"
-                                            className="nav-link"
-                                        >About</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            // target="_new" 
-                                            href="/skills"
-                                            className="nav-link"
-                                        >Skills</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            href="/experience-education"
-                                            className="nav-link"
-                                        >Experience & Education</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            href="/porftolio"
-                                            className="nav-link"
-                                        >Portfolio</Link>
-                                    </li>
-                                    {/* <li className="nav-item">
-                                        <Link
-                                            href="/experience"
-                                            className="nav-link"
-                                        >Pricing</Link>
-                                    </li> */}
-                                    <li className="nav-item">
-                                        <Link
-                                            href="/blog"
-                                            className="nav-link"
-                                        >Blog</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            href="/contact"
-                                            className="nav-link"
-                                        >Contact</Link>
-                                    </li>
+                                    {menuList}
+
                                 </ul>
                             </div>
                         </nav>
